@@ -1,0 +1,35 @@
+**** 아래는 모두 맥 기준
+
+* EC2에 설치 후 SSH 접속하기 
+- EC2 인스턴스에 "연결" 버튼(메뉴) 있음,, 거기에 명령어 잘나와 있음
+(ex) ssh -i "tomcat-demo.pem" ec2-user@ec2-11-111-111-11.ap-northeast-2.compute.amazonaws.com
+
+* tomcat 명령어 정리
+
+// 현재 설치된 tomcat 확인하기
+yum list installed | grep tomcat
+
+// 설치 가능한 tomcat 확인하기
+yum list | grep tomcat8
+
+// tomcat8, 샘플 앱 설치
+sudo yum install tomcat8
+sudo yum install tomcat8-webapps.noarch
+
+// tomcat 실행
+sudo service tomcat8 start
+
+// tomcat 종료
+sudo service tomcat8 stop 
+
+* 참고 
+// tomcat 수행중인지 확인 (java위에서 돌아가니까)
+ps -ef | grep java
+
+// tomcat 설치 경로 
+/usr/share/tomcat8
+
+* 유의사항
+// EC2 인스턴스 만들때 "Amazon Linux AMI 2018.03.0 (HVM)"로 선택  Linux2아님,,
+// java 설치되어있어야함() - 기본으로 설치되어있기는 함
+// tomcat만 설치하면 안되고, 샘플 앱들도 설치해야 동작 확인 가능 
