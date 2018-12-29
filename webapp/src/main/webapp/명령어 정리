@@ -32,6 +32,12 @@ ps -ef | grep java
 // webapps 경로
 /var/lib/tomcat8/webapps
 
+// (트러블 슈팅용) key validation failed
+rm ~/.ssh/*
+ssh-keygen -R hostname
+
+// (트러블 슈팅용) 
+
 * 유의사항
 // EC2 인스턴스 만들때 "Amazon Linux AMI 2018.03.0 (HVM)"로 선택  Linux2아님,,
 // java 설치되어있어야함() - 기본으로 설치되어있기는 함
