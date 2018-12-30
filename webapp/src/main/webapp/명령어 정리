@@ -35,6 +35,8 @@ ps -ef | grep java
 // (트러블 슈팅용) key validation failed
 rm ~/.ssh/*
 ssh-keygen -R hostname
+  // Jenkins file의 쉘 스크립트를 아래와 같이 시작하도록 변경
+  scp -o StrictHostKeyChecking=no
 
 // (트러블 슈팅용) 
 
@@ -42,3 +44,15 @@ ssh-keygen -R hostname
 // EC2 인스턴스 만들때 "Amazon Linux AMI 2018.03.0 (HVM)"로 선택  Linux2아님,,
 // java 설치되어있어야함() - 기본으로 설치되어있기는 함
 // tomcat만 설치하면 안되고, 샘플 앱들도 설치해야 동작 확인 가능 
+
+* docker
+
+docker run tomcat:latest
+
+docker run -p 9090:8080 tomcat:latest
+
+docker ps -a
+
+docker images
+
+docker rmi -f tomcat
